@@ -1,11 +1,20 @@
 import React from 'react';
 import './App.css';
 import Homepage from './pages/homepage/Homepage';
+import { Route, Routes } from 'react-router';
 
-function App() {
+const App = () => {
   return (
     <div>
-      <Homepage/>
+      <Routes>
+        <Route path='/' element={<Homepage/>}/>
+        <Route path='/shop/hats' element={<>Hats</>}/>
+        <Route path='/shop/jackets' element={<>jackets</>}/>
+        <Route path='/shop/sneakers' element={<>sneakers</>}/>
+        <Route path='/shop/womens' element={<>womens</>}/>
+        <Route path='/shop/mens' element={<>mens</>}/>
+        <Route path='*' element={<>Not found</>}/>
+      </Routes>
     </div>
   );
 }
