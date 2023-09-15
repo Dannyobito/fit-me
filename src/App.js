@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Homepage from './pages/homepage/Homepage';
+import ShopPage from './pages/shop/ShopPage';
 import { Route, Routes } from 'react-router';
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
     <div>
       <Routes>
         <Route path='/' element={<Homepage/>}/>
+        <Route path='/shop' element={<ShopPage/>}/>
         <Route path='/shop/hats' element={<>Hats</>}/>
         <Route path='/shop/jackets' element={<>jackets</>}/>
         <Route path='/shop/sneakers' element={<>sneakers</>}/>
