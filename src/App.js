@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/header/Header';
 import Homepage from './pages/homepage/Homepage';
 import ShopPage from './pages/shop/ShopPage';
+import SignInSignUp from './pages/SignInSignUp/SignInSignUp';
 import { Route, Routes } from 'react-router';
 
 const App = () => {
@@ -12,12 +13,8 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Homepage/>}/>
         <Route path='/shop' element={<ShopPage/>}/>
-        <Route path='/shop/hats' element={<>Hats</>}/>
-        <Route path='/shop/jackets' element={<>jackets</>}/>
-        <Route path='/shop/sneakers' element={<>sneakers</>}/>
-        <Route path='/shop/womens' element={<>womens</>}/>
-        <Route path='/shop/mens' element={<>mens</>}/>
-        <Route path='*' element={<>Not found</>}/>
+        <Route path='/signin-signup' element={<SignInSignUp/>}/>
+        <Route path='*' element={<h1>Not Found</h1>}/>
       </Routes>
     </div>
   );
