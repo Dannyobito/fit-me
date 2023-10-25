@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../button/Button'
 import './CollectionItem.scss'
 const CollectionItem = ({id,name,price, imageUrl}) => {
   return (
@@ -8,6 +9,7 @@ const CollectionItem = ({id,name,price, imageUrl}) => {
             <span className='name'>{name}</span>
             <span className='price'>{`$${price}`}</span>
         </div>
+        <Button inverted> Add to cart</Button>
     </div>
   )
 }
