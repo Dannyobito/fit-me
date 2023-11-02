@@ -14,4 +14,8 @@ export const selectCartItemsCount = createSelector(
     [selectCartItems], cartItems => cartItems.reduce(((accumumulator,cartItem) => accumumulator + cartItem.quantity),0)
     
 )
+export const selectCartTotal = createSelector(
+    [selectCartItems], cartItems => cartItems.reduce(((accumumulator,cartItem) => {
+        return accumumulator + (cartItem.quantity * cartItem.price)}),0)
+)
 // arg 1 - collection/ array of input selectors, arg-2 function that returnss value

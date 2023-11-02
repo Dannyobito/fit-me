@@ -7,6 +7,7 @@ import './App.css';
 import Header from './components/header/Header';
 import Homepage from './pages/homepage/Homepage';
 import ShopPage from './pages/shop/ShopPage';
+import CheckoutPage from './pages/checkout/CheckoutPage';
 import SignInSignUp from './pages/SignInSignUp/SignInSignUp';
 import { auth,createUserProfileDocument } from './firebase/firebase.utils';
 import { Route, Routes, Navigate } from 'react-router';
@@ -47,6 +48,8 @@ class App extends React.Component {
           <Route path='/shop' element={<ShopPage/>}/>
           <Route path='/signin-signup' element={this.props.currentUser ? <Navigate to="/" replace /> : <SignInSignUp/>}/>
           <Route path='*' element={<h1>Not Found</h1>}/>
+          <Route path='/checkout' element={<CheckoutPage/>}/>
+
         </Routes>
       </div>
     );
