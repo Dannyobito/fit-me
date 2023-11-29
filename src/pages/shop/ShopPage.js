@@ -1,6 +1,6 @@
 import React from 'react';
 import CollectionsOverview from '../../components/collections-overview/CollectionsOverview';
-const ShopPage =({collections}) => {
+const ShopPage =() => {
     return(
         <div className='shop-page'>
           <CollectionsOverview />

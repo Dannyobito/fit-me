@@ -11,6 +11,7 @@ import CheckoutPage from './pages/checkout/CheckoutPage';
 import SignInSignUp from './pages/SignInSignUp/SignInSignUp';
 import { auth,createUserProfileDocument } from './firebase/firebase.utils';
 import { Route, Routes, Navigate } from 'react-router';
+import CollectionPage from './pages/collection/CollectionPage';
 
 class App extends React.Component {
   
@@ -45,11 +46,13 @@ class App extends React.Component {
         <Header/>
         <Routes>
           <Route path='/' element={<Homepage/>}/>
-          <Route path='/shop' element={<ShopPage/>}/>
+          <Route path='/shop'>
+            <Route index element={<ShopPage/>}/>
+            <Route path={':collectionId'} element={<CollectionPage/>} />
+          </Route>
           <Route path='/signin-signup' element={this.props.currentUser ? <Navigate to="/" replace /> : <SignInSignUp/>}/>
-          <Route path='*' element={<h1>Not Found</h1>}/>
           <Route path='/checkout' element={<CheckoutPage/>}/>
-
+          <Route path='*' element={<h1>Not Found</h1>}/>
         </Routes>
       </div>
     );
