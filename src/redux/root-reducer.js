@@ -18,5 +18,5 @@ const rootReducer = combineReducers({
     directory: directoryReducer,
     shop: shopReducer,
 })
-
+// export default rootReducer
 export default persistReducer(persistConfig, rootReducer)

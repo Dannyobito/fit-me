@@ -14,9 +14,17 @@ const CollectionPage = ({collection,setSelectedCollection}) => {
   useEffect(()=>{
     setSelectedCollection(collectionId)
   },[collectionId, setSelectedCollection])
+
   return (
     <div className='collection-page'>
-      <h2>COLLECTION PAGE</h2>
+      <h2 className='title'>{collection?.title.toUpperCase()}</h2>
+      <div className='items'>
+        {
+          collection?.items.map(item =>{
+            return <CollectionItem key={item.id} item={item}/>
+          })
+        }
+      </div>
     </div>
   )
 }
